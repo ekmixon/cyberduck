@@ -29,9 +29,9 @@ def mailreport(crashlog, ip, revision):
     mail["To"] = "bugs@cyberduck.ch"
     mail["From"] = "noreply@cyberduck.ch"
     if revision:
-        mail["Subject"] = "Cyberduck Crash Report (r" + revision + ") from " + ip
+        mail["Subject"] = f"Cyberduck Crash Report (r{revision}) from {ip}"
     else:
-        mail["Subject"] = "Cyberduck Crash Report from " + ip
+        mail["Subject"] = f"Cyberduck Crash Report from {ip}"
     mail["Date"] = email.Utils.formatdate(localtime=1)
     mail["Message-ID"] = email.Utils.make_msgid()
     s = smtplib.SMTP()
